@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+    <audio id="timer-audio">
+        <source src="sound.mp3" type="audio/mpeg">
+        Your browser doesn't support.
+    </audio>
+
+    <input id="inputTime" class="input" value="00:00:00">
+
+    <h1 id="timer">00:00:00</h1>
+
+
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" onclick="stop()">Pause</button>
+    <button onclick="reset()">Reset</button>
+
+
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
