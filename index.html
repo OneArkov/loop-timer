@@ -4,27 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Loop timer</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts 'Lora' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                fontFamily: {
+                    'lora': ['Lora', 'serif'],
+                },
+            }
+          }
+        }
+      </script>
+
 
 
 </head>
-<body>
+<body class="bg-gray-900 font-lora">
 
     <audio id="timer-audio">
         <source src="sound.mp3" type="audio/mpeg">
         Your browser doesn't support.
     </audio>
 
-    <input id="inputTime" class="input" value="00:00:00">
+    <div class="h-screen flex flex-col justify-center">
+        <div>
+            <div class="container text-center text-white text-4xl m-auto mb-16">
+                <h2 class="text-6xl">Loop timer to keep you sane</h2>
+            </div>
 
-    <h1 id="timer">00:00:00</h1>
+            <div class="container bg-slate-50 p-8 mx-auto rounded w-2/5 max-w-md h-min text-center shadow-lg">
+                <label class="text-sm text-gray-400">Enter the loop time</label>
+                <input id="inputTime" class="text-2xl max-w-fit border-2 text-center" value="00:00:00">
 
+                <h3 class="text-4xl mt-6" id="timer">00:00:00</h3>
 
-    <button id="start" onclick="start()">Start</button>
-    <button id="stop" onclick="stop()">Pause</button>
-    <button onclick="reset()">Reset</button>
+                <div class="flex flex-row justify-around max-w-xs m-auto mt-8">
+                    <button class="rounded-sm px-6 py-2 bg-green-700 text-white hover:bg-green-600 transition-all" id="start" onclick="start()">Start</button>
 
+                    <button class="rounded-sm px-6 py-2 bg-gray-300 text-black hover:bg-gray-200 transition-all" id="stop" onclick="stop()">Pause</button>
+
+                    <button class="rounded-sm px-6 py-2 bg-gray-300 text-black hover:bg-gray-200 transition-all" onclick="reset()">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>
